@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <style>
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }  form {
+        background-color: white;
+        padding: 30px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+        border-radius: 10px;
+        width: 500px;
+      }
+    
+      input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+      }
+    
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+      }
+    
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: green;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+    
+      input[type="submit"]:hover {
+        background-color: darkgreen;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+      }
+    </style>
+</head>
+<body>
+  <div class="form-container">
+    <form action="register_user" method="post">
+      {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      
+      <label for="department">Department:</label>
+      <select id="department" name="department" required>
+      <option value="Department 1">Department 1</option>
+      <option value="Department 2">Department 2</option>
+      <option value="Department 3">Department 3</option>
+      <option value="Department 4">Department 4</option>
+      <option value="Department 5">Department 5</option>
+      <option value="Department 6">Department 6</option>
+      <option value="Department 7">Department 7</option>
+      <option value="Department 8">Department 8</option>
+      <option value="Department 9">Department 9</option>
+      <option value="Department 10">Department 10</option>
+      <option value="Department 11">Department 11</option>
+      <option value="Department 12">Department 12</option>
+      <option value="Department 13">Department 13</option>
+      <option value="Department 14">Department 14</option>
+      <option value="Department 15">Department 15</option>
+      <option value="Department 16">Department 16</option>
+      <option value="Department 17">Department 17</option>
+      <option value="Department 18">Department 18</option>
+      </select><br><br>
+        <input type="submit" value="Submit">
+      </form>
+  </div>
+  </body>
+  </html>

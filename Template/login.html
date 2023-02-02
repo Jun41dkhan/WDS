@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+  form {
+  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.2);
+  padding: 20px;
+  width: 500px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"], input[type="password"], select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+input[type="submit"] {
+  background-color: rgb(0, 174, 255);
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+
+      
+    </style>
+  </head>
+  <body>
+    <form action="authenticate_user" method="post">
+      {% csrf_token %}
+      <h1>Department Login Page</h1>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      
+      <label for="department">Department:</label>
+      <select id="department" name="department">
+        <option value="Department 1">Department 1</option>
+        <option value="Department 2">Department 2</option>
+        <option value="Department 3">Department 3</option>
+        <option value="Department 4">Department 4</option>
+        <option value="Department 5">Department 5</option>
+        <option value="Department 6">Department 6</option>
+        <option value="Department 7">Department 7</option>
+        <option value="Department 8">Department 8</option>
+        <option value="Department 9">Department 9</option>
+        <option value="Department 10">Department 10</option>
+        <option value="Department 11">Department 11</option>
+        <option value="Department 12">Department 12</option>
+        <option value="Department 13">Department 13</option>
+        <option value="Department 14">Department 14</option>
+        <option value="Department 15">Department 15</option>
+        <option value="Department 16">Department 16</option>
+        <option value="Department 17">Department 17</option>
+        <option value="Department 18">Department 18</option>
+      </select><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    {{Invalid_Department}}
+    <script>
+      const form = document.querySelector("form");
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!username.value) {
+    alert("Please enter a username.");
+    return;
+  }
+
+  if (!password.value) {
+    alert("Please enter a password.");
+    return;
+  }
+
+  // Check if username and password are valid
+  // ...
+
+  // If valid, submit form
+  form.submit();
+});
+
+
+    </script> 
+  </body>
+</html>

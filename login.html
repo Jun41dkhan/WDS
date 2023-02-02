@@ -1,0 +1,170 @@
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+form {
+  width: 500px;
+  margin: 50px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  padding: 40px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input[type="text"], input[type="password"], select {
+  padding: 20px;
+  font-size: 16px;
+  width: 70%;
+  margin-bottom: 20px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  border-radius: 5px;
+  transition: 0.3s;
+  outline: none;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, select:focus {
+  background: rgba(255,255,255,0.3);
+  box-shadow: 0 0 5px #51cbee;
+  border-color: #51cbee;
+}
+
+input[type="submit"] {
+  padding: 20px 50px;
+  background-color: #00b894;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 40px;
+  width: 100%;
+  outline: none;
+}
+
+input[type="submit"]:hover {
+  background-color: #333;
+  box-shadow: 0 0 5px #51cbee;
+}
+      
+      @media (max-width: 767px) {
+        form {
+          max-width: 90%;
+        }
+      }
+      
+      h1 {
+        font-size: 2em;
+        white-space: pre;
+        overflow: hidden;
+        width: 100%;
+        border-right: 0.15em solid orange;
+        animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+      }
+      
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      
+      @keyframes blink {
+        from, to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: orange;
+        }
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <h1 id="typing-text"></h1>
+    <form action="">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      
+      <label for="department">Department:</label>
+      <select id="department" name="department">
+        <option value="Department 1">Department 1</option>
+        <option value="Department 2">Department 2</option>
+        <option value="Department 3">Department 3</option>
+        <option value="Department 4">Department 4</option>
+        <option value="Department 5">Department 5</option>
+        <option value="Department 6">Department 6</option>
+        <option value="Department 7">Department 7</option>
+        <option value="Department 8">Department 8</option>
+        <option value="Department 9">Department 9</option>
+        <option value="Department 10">Department 10</option>
+        <option value="Department 11">Department 11</option>
+        <option value="Department 12">Department 12</option>
+        <option value="Department 13">Department 13</option>
+        <option value="Department 14">Department 14</option>
+        <option value="Department 15">Department 15</option>
+        <option value="Department 16">Department 16</option>
+        <option value="Department 17">Department 17</option>
+        <option value="Department 18">Department 18</option>
+      </select><br><br>
+      
+      <input type="submit" value="Submit">
+    </form>
+    <script>
+      const form = document.querySelector("form");
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!username.value) {
+    alert("Please enter a username.");
+    return;
+  }
+
+  if (!password.value) {
+    alert("Please enter a password.");
+    return;
+  }
+
+  // Check if username and password are valid
+  // ...
+
+  // If valid, submit form
+  form.submit();
+});
+const text = "Hello and Welcome";
+const typingText = document.querySelector("#typing-text");
+let i = 0;
+
+const type = () => {
+  if (i < text.length) {
+    typingText.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 100);
+  }
+};
+
+type();
+
+
+    </script> 
+  </body>
+</html>
